@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--FontAwesome added-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <link rel="shortcut icon" href="img/1.ico" type="image/x-icon">
+
+    <title>To-Do Project | Home | Nirdosh Gandhi</title>
+
+
+    <!-- for Css animatin not added here-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css" />
+
+</head>
+
+<style>
+    body {
+        font-family: 'Times New Roman', Times, serif;
+    }
+    
+    label,
+    th,
+    td {
+        font-size: 20px;
+    }
+</style>
+
+<body class="bg-white">
+
+    <!-- fixed-top -->
+
+    <nav id="nav_id" class="navbar navbar-light fixed-top" style="height: 6%;background-color:darkorange">
+        <div class="container-fluid float-right py-0 my-0">
+            <a class="navbar-brand align-top my-0 py-0" style="color:rgb(255, 255, 255)" href="#"><img src="img/1.png" width="28" height="23" class="d-inline-block mt-1 py-0 align-top" alt=""> Nirdosh Gandhi's Project</a>
+        </div>
+    </nav>
+
+    <div class="container-fluid mx-0 px-0 pt-5">
+        <div id="a2" class="container-fluid mx-0 px-0">
+            <!--animate__animated animate__flipInX-->
+            <div class="jumbotron pb-0 bg-white">
+                <div class="container">
+                    <h1 id="a1" class="display-4 text-center text-dark">Hi there...!</h1>
+                </div>
+                <div>
+                    <p class="lead text-right pt-4 pr-5 text-secondary">Current Time is:&nbsp;<b><span class="text-dark" id="time"></span></b></p>
+                    <hr class="my-4">
+                    <blockquote class="blockquote text-center mb-0  text-primary">
+                        <p>"If you want to fly with eagles, don't waste your time in swimming with ducks."</p>
+                        <footer class="blockquote-footer"><cite title="Source Title">Anonymous</cite></footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h1>
+                <div id="b1" class="d-flex justify-content-center text-dark">
+                    <p>To-Do List:</p>
+                </div>
+            </h1>
+
+            <div id="f1" class="container mb-0 text-dark">
+                <div class="form-group">
+                    <label for="item">Enter New To-Do item:</label>
+                    <input type="text" placeholder="Enter new To-Do item here" class="form-control" id="item" />
+                </div>
+                <div class="form-group">
+                    <label for="desc">Description:</label>
+                    <textarea class="form-control input-lg" placeholder="Enter To-Do's Description here" rows="3" id="desc"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="dt">Due Date:</label>
+                    <input class="form-control col-xl-3" type="date" id="dt">
+                </div>
+                <div class="container mb-5 mt-4 px-0">
+                    <button class="btn btn-success" id="add">Add Item</button>
+                    <button class="btn btn-danger mx-3" id="ca" onclick="clearing()">Clear All</button>
+                </div>
+                <div id="c1" class="container d-flex justify-content-center">
+                    <button id="button-info" class="btn btn-info col-xl-2">View List</button>
+                </div>
+            </div>
+
+            <div id="mt1" style="display: none;" class="container px-0 animate__animated animate__flipInX">
+                <h2 class="d-flex justify-content-center">
+                    <p>Search To-Do Task by Items, Description or Date:</p>
+                </h2>
+                <div class="form-group d-flex justify-content-center">
+                    <input class="form-control mr-sm-2 col-lg-8" type="search" id="search" onkeyup="searching()" placeholder="Search To-Do Tasks here...">
+                </div>
+                <p class=" d-flex justify-content-center font-weight-lighter"> *Sort data by clicking on Table Headers</p>
+
+                <div style="display: none;" class="alert alert-warning" id="alertb" role="alert">
+                    <strong>Your item is placed to input Box for editing. Please Add Item again once you have done editing otherwise it will be deleted</strong>
+                </div>
+
+                <table class="table my-4 table-striped text-center" id="mytable">
+                    <thead class="thead-dark my-5">
+                        <tr>
+                            <th style="cursor: pointer;" scope="col" onclick="sortTable(0)">Srno.</th>
+                            <th style="cursor: pointer;" scope="col" onclick="sortTable(1)">Item</th>
+                            <th style="cursor: pointer;" scope="col" onclick="sortTable(2)">Description</th>
+                            <th style="cursor: pointer;" scope="col" onclick="sortTable(3)">Due Date</th>
+                            <!-- <th scope="col ">Edit</th> -->
+                            <th scope="col " colspan="2">Manage Tasks</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bs-footer my-5" role="contentinfo">
+        <div class="container-fluid">
+            <h6 class="text-center">CopyRight <i class="fa fa-copyright" style="font-size:15px;"></i> 2020 | Nirdosh Gandhi <i class="fa fa-registered" style="font-size:13px;"></i>
+            </h6>
+        </div>
+    </footer>
+
+</body>
+
+
+<script src="index.js "></script>
+
+<!-- Other 2 JQuery added -->
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+<script src="myjquery.js"></script>
+
+
+</html>
