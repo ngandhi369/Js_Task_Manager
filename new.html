@@ -38,7 +38,7 @@
 
     <!-- fixed-top -->
 
-    <nav id="nav_id" class="navbar navbar-light fixed-top" style="height: 6%;background-color:darkorange">
+    <nav id="nav_id" class="navbar navbar-light fixed-top" style="background-color:darkorange">
         <div class="container-fluid float-right py-0 my-0">
             <a class="navbar-brand align-top my-0 py-0" style="color:rgb(255, 255, 255)" href="#"><img src="img/1.png" width="28" height="23" class="d-inline-block mt-1 py-0 align-top" alt=""> Nirdosh Gandhi's Project</a>
         </div>
@@ -49,7 +49,9 @@
             <!--animate__animated animate__flipInX-->
             <div class="jumbotron pb-0 bg-white">
                 <div class="container">
-                    <h1 id="a1" class="display-4 text-center text-dark">Hi there...!</h1>
+                    <p id="a1" class="text-center text-dark" style="font-size: 55px;">
+                    Hi there...!
+                </p>
                 </div>
                 <div>
                     <p class="lead text-right pt-4 pr-5 text-secondary">Current Time is:&nbsp;<b><span class="text-dark" id="time"></span></b></p>
@@ -104,20 +106,24 @@
                     <strong>Your item is placed to input Box for editing. Please Add Item again once you have done editing otherwise it will be deleted</strong>
                 </div>
 
-                <table class="table my-4 table-striped text-center" id="mytable">
-                    <thead class="thead-dark my-5">
-                        <tr>
-                            <th style="cursor: pointer;" scope="col" onclick="sortTable(0)">Srno.</th>
-                            <th style="cursor: pointer;" scope="col" onclick="sortTable(1)">Item</th>
-                            <th style="cursor: pointer;" scope="col" onclick="sortTable(2)">Description</th>
-                            <th style="cursor: pointer;" scope="col" onclick="sortTable(3)">Due Date</th>
-                            <!-- <th scope="col ">Edit</th> -->
-                            <th scope="col " colspan="2">Manage Tasks</th>
-                        </tr>
-                    </thead>
-                    <tbody id="table">
-                    </tbody>
-                </table>
+                <div class="table-responsive">
+
+	                <table class="table my-4 table-striped text-center" id="mytable">
+	                    <thead class="thead-dark my-5">
+	                        <tr>
+	                            <th style="cursor: pointer;" scope="col" onclick="sortTable(0)">Srno.</th>
+	                            <th style="cursor: pointer;" scope="col" onclick="sortTable(1)">Item</th>
+	                            <th style="cursor: pointer;" scope="col" onclick="sortTable(2)">Description</th>
+	                            <th style="cursor: pointer;" scope="col" onclick="sortTable(3)">Due Date</th>
+	                            <!-- <th scope="col ">Edit</th> -->
+	                            <th scope="col " colspan="2">Manage Tasks</th>
+	                        </tr>
+	                    </thead>
+	                    <tbody id="table">
+	                    </tbody>
+	                </table>
+
+	            </div>
             </div>
         </div>
     </div>
